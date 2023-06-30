@@ -124,16 +124,11 @@ async function main() {
         ]
     });
 
-    // Performs requests to validate if the integration file exists
-    // for (const repo of repositories) {
-    //     await validateFileExists(owner, repo, branch, filePath, resultList, failureList)
-    // }
-
     // Write the data in the respective lists
     await failureListCsvWriter.writeRecords(uniqueFailureList.map(repo => ({ repository: repo })));
     await resultListCsvWriter.writeRecords(uniqueResultList.map(repo => ({ repository: repo })));
 
-    // console.log('CSV files successfully generated.');
+    console.log('CSV files successfully generated.');
 }
 
 main()
