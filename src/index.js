@@ -25,7 +25,7 @@ async function getAllRepositories(organization, pageNumber) {
     })
 
     if(!repositories) {
-        return console.log('Não há repositórios nesta página')
+        return console.error(`There are no repositories on the page ${pageNumber}.`)
     }
 
     const repositoryName = repositories.data.map(repo => repo.name)
